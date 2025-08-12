@@ -16,7 +16,7 @@ public class CreateCompanyUseCase {
     public CompanyEntity execute(CompanyEntity companyEntity) {
 
         this.companyRepository
-            .findByUsernamenOrEmail(companyEntity.getUsername(), companyEntity.getEmail())
+            .findByUsernameOrEmail(companyEntity.getUsername(), companyEntity.getEmail())
             .ifPresent((user) -> {
                 throw new UserFoundException();
             });
