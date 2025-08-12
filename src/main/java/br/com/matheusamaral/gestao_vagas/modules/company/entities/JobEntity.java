@@ -28,9 +28,7 @@ public class JobEntity {
     @NotBlank(message = "Esse campo é obrigatório")
     private String level;
 
-    // Muitos jobs para 1 company
     @ManyToOne
-    // Chave estrangeira
     @JoinColumn(name = "company_id", insertable = false, updatable = false)
     private CompanyEntity companyEntity;
 
