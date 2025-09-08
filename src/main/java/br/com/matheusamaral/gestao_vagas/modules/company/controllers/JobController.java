@@ -14,7 +14,6 @@ import br.com.matheusamaral.gestao_vagas.modules.company.dto.CreateJobDTO;
 import br.com.matheusamaral.gestao_vagas.modules.company.entities.JobEntity;
 import br.com.matheusamaral.gestao_vagas.modules.company.useCases.CreateJobUseCase;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -55,7 +54,7 @@ public class JobController {
                 var result = this.createJobUseCase.execute(jobEntity);
                 return ResponseEntity.ok().body(result);
         } catch (Exception e) {
-                return ResponseEntity.badRequest().body(e);
+                return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 }
