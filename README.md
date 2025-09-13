@@ -14,7 +14,11 @@ docker ps
 ```
 docker-compose down
 ```
-## Rodar container do SonarQube
+### Rodar container do SonarQube
 ```
 docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:9.9.0-community
+```
+### Verificar status do SonarQube
+```
+mvn clean verify sonar:sonar
 ```
